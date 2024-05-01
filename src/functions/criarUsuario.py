@@ -1,5 +1,3 @@
-from functions.criarChave import criarChave
-
 def CriarUsuario():
     while True:
         nome = input("Digite o nome do usuário: ")

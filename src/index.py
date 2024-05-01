@@ -1,7 +1,3 @@
-from database.functions.set import set
-from database.functions.get import get
-from database.functions.keys import keys
-from functions.print_decode import print_decode
 from functions.cadastrarUsuario import CadastrarUsuario
 from functions.listarUsuario import ListarUsuario
 from menu.menuIndex import MenuIndex
@@ -10,7 +6,7 @@ while True:
     MenuIndex()
     option = str(input("Digite a opção desejada: "))
     if option == "0":
-        print_decode("Saindo...")
+        print("Saindo...")
         break
     elif option == "1":
         CadastrarUsuario()
@@ -21,4 +17,4 @@ while True:
     elif option == "4":
         print("Deletar")
     else:
-        print_decode("Opção inválida")
+        print("Opção inválida")
