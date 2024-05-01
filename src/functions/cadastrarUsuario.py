@@ -4,6 +4,10 @@ from functions.criarUsuario import CriarUsuario
 import json
 
 def CadastrarUsuario():
-    chave = criarChave("usuarios")
-    usuario = CriarUsuario()
-    set(chave, json.dumps(usuario))
+    try:
+        chave = criarChave("usuarios")
+        usuario = CriarUsuario()
+        set(chave, json.dumps(usuario))
+    except Exception as e:
+        print("\nErro ao cadastrar usuário\n")
+        print(e)
