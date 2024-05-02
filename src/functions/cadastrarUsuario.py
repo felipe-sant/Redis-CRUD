@@ -12,6 +12,7 @@ def CadastrarUsuario():
         else:
             usuario = CriarUsuario(chave)
             set(chave, json.dumps(usuario))
+            print("\nUsuário cadastrado com sucesso!\n")
     except Exception as e:
         print(f"\nErro ao cadastrar usuário: {e}")
         input()

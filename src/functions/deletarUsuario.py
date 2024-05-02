@@ -1,14 +1,15 @@
 from database.functions.delete import delete
 from functions.criarChave import CriarChave
-from functions.buscarDados import BuscarDados
+from functions.verificarChaveExistente import VerificarChaveExistente
 
 def DeletarUsuario():
-    listaUsuarios = BuscarDados("usuarios")
-    
-    chaveParaExclusao = CriarChave("usuarios")
-    
-    for usuario in listaUsuarios:
-        if usuario["chave"] == chaveParaExclusao:
-            delete(chaveParaExclusao)
-            print("Usuário deletado com sucesso")
-            return
+    try:
+        chaveParaExcluir = CriarChave("usuarios")
+        if (VerificarChaveExistente(chaveParaExcluir)):
+            delete(chaveParaExcluir)
+            print("\nUsuário deletado com sucesso!\n")
+        else:
+            raise Exception("Chave não encontrada!")
+    except Exception as e:
+        print(f"\nErro ao deletar usuário: {e}")
+        input()

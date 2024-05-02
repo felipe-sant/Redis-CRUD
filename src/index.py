@@ -2,8 +2,9 @@ from menu.menuIndex import MenuIndex
 from functions.cadastrarUsuario import CadastrarUsuario
 from functions.listarUsuario import ListarUsuario
 from functions.deletarUsuario import DeletarUsuario
-
 from functions.deletarTodosUsuarios import DeletarTodosUsuarios
+
+print("\nBem-vindo ao sistema de cadastro de usuários\n")
 
 while True:
     MenuIndex()
@@ -16,9 +17,9 @@ while True:
     elif option == "2":
         ListarUsuario()
     elif option == "3":
-        DeletarUsuario()
+        print("Atualizar")
     elif option == "4":
-        print("Deletar")
+        DeletarUsuario()
     elif option == "5":
         DeletarTodosUsuarios()
     else:
