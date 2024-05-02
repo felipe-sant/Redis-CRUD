@@ -3,8 +3,9 @@ from database.functions.delete import delete
 
 def DeletarTodosUsuarios():
     chaves = keys("usuarios")
-    print(chaves)
 
     for chave in chaves:
         delete(chave)
         print(f"Chave {chave} deletada com sucesso")
+    
+    print("\nTodos os usuários foram deletados com sucesso!\n")
