@@ -1,13 +1,17 @@
 from database.functions.set import set
 from functions.criarChave import CriarChave
 from functions.criarUsuario import CriarUsuario
+from functions.verificarChaveExistente import VerificarChaveExistente
 import json
 
 def CadastrarUsuario():
     try:
-        chave = CriarChave("usuarios", None)
-        usuario = CriarUsuario(chave)
-        set(chave, json.dumps(usuario))
+        chave = CriarChave("usuarios")
+        if (VerificarChaveExistente(chave)):
+            raise Exception("Chave já existente!")
+        else:
+            usuario = CriarUsuario(chave)
+            set(chave, json.dumps(usuario))
     except Exception as e:
-        print("\nErro ao cadastrar usuário\n")
-        print(e)
+        print(f"\nErro ao cadastrar usuário: {e}")
+        input()
