@@ -1,4 +1,6 @@
-def CriarUsuario():
+from functions.criarChave import CriarChave
+
+def CriarUsuario(chave):
     while True:
         nome = input("Digite o nome do usuário: ")
         if nome == "":
@@ -21,6 +23,7 @@ def CriarUsuario():
         break
     
     usuario = {
+        "chave": chave,
         "nome": nome,
         "endereco": endereco,
         "rg": rg

@@ -1,12 +1,12 @@
 from database.functions.set import set
-from functions.criarChave import criarChave
+from functions.criarChave import CriarChave
 from functions.criarUsuario import CriarUsuario
 import json
 
 def CadastrarUsuario():
     try:
-        chave = criarChave("usuarios")
-        usuario = CriarUsuario()
+        chave = CriarChave("usuarios", None)
+        usuario = CriarUsuario(chave)
         set(chave, json.dumps(usuario))
     except Exception as e:
         print("\nErro ao cadastrar usuário\n")

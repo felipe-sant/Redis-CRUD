@@ -1,9 +1,12 @@
-def criarChave(colecao):
-    while True:
-        chave = input("Digite a chave: ")
-        if chave == "":
-            print("Chave inválida")
-            continue
-        break
+def CriarChave(colecao, chave = None):
+    if chave is None:
+        while True:
+            novaChave = input("Digite a chave: ")
+            if novaChave == "":
+                print("Chave inválida")
+                continue
+            chave = novaChave
+            break
+    
     chave = colecao + "@" + chave.replace(" ", "_")
     return chave
